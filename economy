@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Legged Stool</title>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .stool-leg {
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            background: #ccc;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+        }
+        .leg-agriculture {
+            top: 100px;
+            left: 50px;
+        }
+        .leg-fishing {
+            top: 200px;
+            left: 200px;
+        }
+        .leg-tourism {
+            top: 300px;
+            left: 350px;
+        }
+        #info {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+            width: 400px;
+            background: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stool-leg leg-agriculture" onclick="showInfo('agriculture')">Agriculture</div>
+        <div class="stool-leg leg-fishing" onclick="showInfo('fishing')">Fishing</div>
+        <div class="stool-leg leg-tourism" onclick="showInfo('tourism')">Tourism</div>
+        <div id="info"></div>
+    </div>
+    <script>
+        function showInfo(leg) {
+            var info = document.getElementById('info');
+            if (leg === 'agriculture') {
+                info.innerHTML = '<h3>Agriculture</h3><p>The economy of Dominica has been primarily based on agriculture and agricultural production. Root crops, tree crops, and vegetable crops are the primary agricultural exports to other Caribbean islands, such as Guadeloupe and Martinique, and western nations such as the United States and United Kingdom.</p>';
+            } else if (leg === 'fishing') {
+                info.innerHTML = '<h3>Fishing</h3><p>The economy of Dominica is also heavily dependent on the fishing sector for its local food and food security.</p>';
+            } else if (leg === 'tourism') {
+                info.innerHTML = '<h3>Tourism</h3><p>In recent years, tourism and its associated activities have been a steadily developing sector for Dominica, with special value placed on eco-tourism, nature, and sustainability.</p>';
+            }
+            info.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
