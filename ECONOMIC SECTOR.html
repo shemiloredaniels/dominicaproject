@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Legged Stool</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        .stool-leg {
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            background: #8B4513; /* Brown color for the stool legs */
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .leg1 {
+            top: 100px;
+            left: 20px;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+        }
+        .leg2 {
+            top: 100px;
+            left: 80px;
+            transform: rotate(-45deg);
+            transform-origin: bottom right;
+        }
+        .leg3 {
+            top: 10px;
+            left: 60px;
+            transform: rotate(0deg);
+            transform-origin: top center;
+            height: 120px;
+        }
+        .stool-seat {
+            position: absolute;
+            width: 120px;
+            height: 20px;
+            background: #a0522d; /* Darker brown for the seat */
+            border-radius: 10px;
+            top: 80px;
+            left: 40px;
+            z-index: 0;
+        }
+        #info {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 200px;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #info h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stool-seat"></div>
+        <div class="stool-leg leg1" onclick="showInfo('agriculture')"></div>
+        <div class="stool-leg leg2" onclick="showInfo('fishing')"></div>
+        <div class="stool-leg leg3" onclick="showInfo('tourism')"></div>
+        <div id="info"></div>
+    </div>
+    <script>
+        function showInfo(leg) {
+            var info = document.getElementById('info');
+            if (leg === 'agriculture') {
+                info.innerHTML = '<h3>Agriculture</h3><p>The economy of Dominica has been primarily based on agriculture and agricultural production. Root crops, tree crops, and vegetable crops are the primary agricultural exports to other Caribbean islands and western nations.</p>';
+            } else if (leg === 'fishing') {
+                info.innerHTML = '<h3>Fishing</h3><p>The economy of Dominica is also heavily dependent on the fishing sector for its local food and food security.</p>';
+            } else if (leg === 'tourism') {
+                info.innerHTML = '<h3>Tourism</h3><p>In recent years, tourism and its associated activities have been a steadily developing sector for Dominica, with special value placed on eco-tourism, nature, and sustainability.</p>';
+            }
+            info.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
